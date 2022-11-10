@@ -10,12 +10,12 @@ const rl = readline.createInterface({ input: stdin, output: stdout });
 console.log('Запишите данные в файл');
 
 rl.on('line', (str) => {
-  if (!(str === 'exit') || !(str === 'Exit')) {
-    stream.write(`${str}\n`);
-  } 
-  else {
+  if (str === 'exit' || str === 'Exit') {
     rl.close();
     console.log('Файл data.txt создан');
+  } 
+  else {
+    stream.write(`${str}\n`);
   }
 });
 
